@@ -1,6 +1,7 @@
 package com.savitrisekar.newsapp.ui.features.home.webview
 
 import android.os.Bundle
+import android.view.View
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -31,6 +32,7 @@ class WebNewsActivity : AppCompatActivity() {
 
         binding.newsWebview.apply {
             webViewClient = WebViewClient()
+            binding.progressBar.visibility = View.VISIBLE
             loadUrl(article?.url!!)
         }
 
