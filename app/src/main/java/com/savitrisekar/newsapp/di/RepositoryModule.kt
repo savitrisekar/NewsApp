@@ -34,7 +34,7 @@ object RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideFavoriteRecipeRepository(
+    fun provideNewsFavoriteRepository(
         newsFavoriteDataSource: NewsFavoriteDataSource
     ): NewsFavoriteRepository {
         return NewsFavoriteRepository(newsFavoriteDataSource)

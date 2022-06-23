@@ -18,7 +18,7 @@ object DataSourceModule {
 
     @Singleton
     @Provides
-    fun provideRecipeDataSource(newsApiService: NewsApiService): NewsDataSource {
+    fun provideNewsDataSource(newsApiService: NewsApiService): NewsDataSource {
         return NewsDataSourceImpl(newsApiService)
     }
 
