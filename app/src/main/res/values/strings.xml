@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+
+    <!--news-->
+    <string name="label_search_news">Search news</string>
+    <string name="label_tv_title">Notre Dame baseball vs. Texas in 2022 College World Series: Live score updates in Game 1 - Notre Dame Insider</string>
+    <string name="label_published">Published :</string>
+    <string name="label_date">Sat, 17 Juni 2022</string>
+    <string name="label_source">Notre Dame Inside</string>
+    <string name="label_title_source">Source :</string>
+    <string name="label_content">Placeholder while article actions loadr\nNASHVILLE Former president Donald Trump used an evangelical conference here to ridicule former vice president Mike Pence for upholding the Constitution on Jan.… [+7936 chars]</string>
+    <string name="label_read_more">Read More</string>
+    <string name="label_category">Category</string>
+    <string name="label_no_internet_connection">No Internet Connection</string>
+    <string name="label_unknown_error">Unknown Error</string>
+    <string name="label_berita_tidak_tersedia">Berita tidak tersedia</string>
+    <string name="label_deleted">Deleted Success</string>
+    <string name="label_saved">Saved Success</string>
+    <string name="label_favorite">Favorite</string>
+    <string name="label_btm_profile">Profile</string>
+    <string name="label_btm_favorite">Favorite</string>
+    <string name="label_btm_home">Home</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_name">Sekar Ayu Savitri</string>
+    <string name="label_repository">github.com/savitrisekar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

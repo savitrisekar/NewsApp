@@ -1,0 +1,3 @@
+package com.savitrisekar.newsapp.data.model
+
+data class Category(val id: Int, val name: String)
