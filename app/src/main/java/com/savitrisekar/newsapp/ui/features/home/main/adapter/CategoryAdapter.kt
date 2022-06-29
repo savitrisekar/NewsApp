@@ -2,6 +2,7 @@ package com.savitrisekar.newsapp.ui.features.home.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.savitrisekar.newsapp.data.model.Category
 import com.savitrisekar.newsapp.databinding.ItemCategoryBinding

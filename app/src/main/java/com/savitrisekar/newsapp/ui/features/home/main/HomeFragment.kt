@@ -2,16 +2,17 @@ package com.savitrisekar.newsapp.ui.features.home.main
 
 import android.content.Intent
 import android.util.Log
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.savitrisekar.newsapp.ui.features.home.main.adapter.HomeAdapter
 import com.savitrisekar.newsapp.base.arch.BaseFragment
 import com.savitrisekar.newsapp.base.model.Resource
 import com.savitrisekar.newsapp.data.model.Article
 import com.savitrisekar.newsapp.data.model.Category
 import com.savitrisekar.newsapp.databinding.FragmentHomeBinding
 import com.savitrisekar.newsapp.ui.features.home.main.adapter.CategoryAdapter
+import com.savitrisekar.newsapp.ui.features.home.main.adapter.HomeAdapter
 import com.savitrisekar.newsapp.ui.features.home.webview.WebNewsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,7 +44,7 @@ class HomeFragment :
 
     override fun getData() {
         getViewModel().getAllRecipes(category)
-        Log.d("check", category)
+
     }
 
     override fun showLoading(isVisible: Boolean) {
@@ -97,6 +98,7 @@ class HomeFragment :
                 "Sports" -> category = "sports"
                 "Technology" -> category = "technology"
             }
+            getData()
         }
 
         setCategoryAdapter()
