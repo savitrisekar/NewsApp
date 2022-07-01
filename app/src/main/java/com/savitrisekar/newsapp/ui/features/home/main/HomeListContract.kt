@@ -14,12 +14,12 @@ interface HomeListContract {
 
     interface ViewModel : BaseContract.BaseViewModel {
         fun getRecipeListLiveData(): LiveData<Resource<List<Article>>>
-        fun getAllRecipes(category: String)
+        fun getAllNews(category: String)
         fun searchNews(query: String)
     }
 
     interface Repository : BaseContract.BaseRepository {
-        suspend fun getAllRecipes(category: String): NewsResponse
+        suspend fun getAllNews(category: String): NewsResponse
         suspend fun searchNews(query: String): NewsResponse
     }
 }

@@ -13,10 +13,10 @@ import java.util.concurrent.TimeUnit
 interface NewsApiService {
 
     /**
-     * list recipe
+     * list news
      * **/
     @GET("top-headlines")
-    suspend fun getAllRecipes(
+    suspend fun getAllNews(
         @Query("category") category: String,
         @Query("apiKey") key: String = BuildConfig.API_KEY,
         @Query("page") page: Int = 1

@@ -31,12 +31,12 @@ class HomeViewModel @Inject constructor(
         return categoryLiveData
     }
 
-    override fun getAllRecipes(category: String) {
+    override fun getAllNews(category: String) {
         recipeLiveData.value = Resource.Loading()
 
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val response = repository.getAllRecipes(category)
+                val response = repository.getAllNews(category)
                 viewModelScope.launch(Dispatchers.Main) {
                     recipeLiveData.value = response.articles?.let { Resource.Success(it) }!!
                 }
@@ -64,21 +64,4 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
-
-    /*override fun getAllRecipes() {
-        recipeLiveData.value = Resource.Loading()
-
-        viewModelScope.launch(Dispatchers.IO){
-            try {
-                val response = repository.getAllRecipes()
-                viewModelScope.launch (Dispatchers.Main){
-                    recipeLiveData.value = response.articles?.let { Resource.Success(it) }!!
-                }
-            } catch (e: Exception){
-                viewModelScope.launch (Dispatchers.Main){
-                    recipeLiveData.value = Resource.Error(e. localizedMessage.orEmpty())
-                }
-            }
-        }
-    }*/
 }

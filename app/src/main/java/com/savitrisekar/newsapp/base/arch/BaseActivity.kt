@@ -15,6 +15,7 @@ abstract class BaseActivity<B : ViewBinding, VM : ViewModel>(
 
     private lateinit var binding: B
 
+    //viewModel di inject
     @Inject
     lateinit var viewModelInstance: VM
 

@@ -2,7 +2,6 @@ package com.savitrisekar.newsapp.ui.features.home.main
 
 import android.content.Intent
 import android.util.Log
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,29 +36,7 @@ class HomeFragment :
         getData()
     }
 
-    private fun getSearchNews(query: String) {
-        val search = "%$query%"
-        getViewModel().searchNews(search)
-    }
-
-    override fun getData() {
-        getViewModel().getAllRecipes(category)
-
-    }
-
-    override fun showLoading(isVisible: Boolean) {
-        getViewBinding().progressCategory.isVisible = isVisible
-    }
-
-    override fun showContent(isVisible: Boolean) {
-        getViewBinding().rvNews.isVisible = isVisible
-    }
-
-    override fun showError(isErrorEnabled: Boolean, msg: String?) {
-        getViewBinding().tvError.isVisible = isErrorEnabled
-        getViewBinding().tvError.text = msg
-    }
-
+    // show the data
     override fun observeData() {
         getViewModel().getRecipeListLiveData().observe(this) {
             when (it) {
@@ -73,16 +50,28 @@ class HomeFragment :
                     showContent(true)
                     showError(false, null)
 
+                    // implement recyclerView
                     initList()
+                    //set adapter
                     setNewsAdapter(it.data)
                 }
                 is Resource.Error -> {
                     showLoading(false)
                     showContent(false)
-                    showError(true, it.message)
+                    showError(true, it.message) //consume dari viewModel
                 }
             }
         }
+    }
+
+    private fun getSearchNews(query: String) {
+        val search = "%$query%"
+        getViewModel().searchNews(search)
+    }
+
+    // method getData from viewModel
+    override fun getData() {
+        getViewModel().getAllNews(category)
     }
 
     override fun initList() {
@@ -128,6 +117,19 @@ class HomeFragment :
     private fun setCategoryAdapter() {
         categoryAdapter.setItems(categoryList)
         Log.d("category_list", categoryList.toString())
+    }
+
+    override fun showLoading(isVisible: Boolean) {
+        getViewBinding().progressCategory.isVisible = isVisible
+    }
+
+    override fun showContent(isVisible: Boolean) {
+        getViewBinding().rvNews.isVisible = isVisible
+    }
+
+    override fun showError(isErrorEnabled: Boolean, msg: String?) {
+        getViewBinding().tvError.isVisible = isErrorEnabled
+        getViewBinding().tvError.text = msg
     }
 
     private val categoryList = listOf<Category>(

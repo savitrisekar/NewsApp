@@ -10,8 +10,8 @@ class HomeRepository @Inject constructor(
 ) :
     BaseRepositoryImpl(), HomeListContract.Repository {
 
-    override suspend fun getAllRecipes(category: String): NewsResponse =
-        datasource.getAllRecipes(category)
+    override suspend fun getAllNews(category: String): NewsResponse =
+        datasource.getAllNews(category)
 
     override suspend fun searchNews(query: String): NewsResponse {
         return datasource.searchNews(query)

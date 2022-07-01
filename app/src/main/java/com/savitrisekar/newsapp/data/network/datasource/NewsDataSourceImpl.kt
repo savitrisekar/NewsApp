@@ -6,8 +6,8 @@ import javax.inject.Inject
 
 class NewsDataSourceImpl @Inject constructor(private val recipeApiService: NewsApiService) :
     NewsDataSource {
-    override suspend fun getAllRecipes(category: String): NewsResponse {
-        return recipeApiService.getAllRecipes(category)
+    override suspend fun getAllNews(category: String): NewsResponse {
+        return recipeApiService.getAllNews(category)
     }
 
     override suspend fun searchNews(query: String): NewsResponse {
